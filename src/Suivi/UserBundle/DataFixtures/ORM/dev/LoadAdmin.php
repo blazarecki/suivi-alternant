@@ -13,21 +13,21 @@ use Suivi\UserBundle\Entity\User;
  *
  * @author Benjamin Lazarecki <benjamin@widop.com>
  */
-class LoadUser extends AbstractFixture implements OrderedFixtureInterface
+class LoadAdmin extends AbstractFixture implements OrderedFixtureInterface
 {
     /**
      * {@inheritdoc}
      */
     public function load(ObjectManager $manager)
     {
-        $user = new User();
-        $user
-            ->setUsername('user')
-            ->setEmail('user@user.com')
-            ->setPlainPassword('user')
+        $admin = new User();
+        $admin
+            ->setUsername('admin')
+            ->setEmail('admin@admin.com')
+            ->setPlainPassword('admin')
             ->setEnabled(true);
 
-        $manager->persist($user);
+        $manager->persist($admin);
 
         $manager->flush();
     }
