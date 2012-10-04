@@ -23,7 +23,6 @@
         "stof/doctrine-extensions-bundle": "dev-master",
         "gedmo/doctrine-extensions" : "dev-master",
         "friendsofsymfony/user-bundle": "*",
-        "knplabs/knp-menu-bundle": "*"
     },
     "scripts": {
         "post-install-cmd": [

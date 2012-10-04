@@ -19,14 +19,14 @@
     <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
 
     <div class="control-group">
-        <label class="control-label" for="inputEmail">{{ 'security.login.username'|trans({}, 'FOSUserBundle') | suffix }}</label>
+        <label class="control-label" for="inputEmail">{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}</label>
         <div class="controls">
             <input class="input-large" placeholder="{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}" type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
         </div>
     </div>
 
     <div class="control-group">
-        <label class="control-label" for="inputEmail">{{ 'security.login.password'|trans({}, 'FOSUserBundle') | suffix}}</label>
+        <label class="control-label" for="inputEmail">{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}</label>
         <div class="controls">
             <input class="input-large" placeholder="{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}" type="password" id="password" name="_password" required="required" />
         </div>
