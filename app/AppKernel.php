@@ -22,7 +22,6 @@ class AppKernel extends Kernel
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
 
             new FOS\UserBundle\FOSUserBundle(),
-            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
             new Widop\FixturesBundle\WidopFixturesBundle(),
             new Widop\TwigExtensionsBundle\WidopTwigExtensionsBundle(),

@@ -6,7 +6,7 @@ use Doctrine\Common\DataFixtures\AbstractFixture,
     Doctrine\Common\DataFixtures\OrderedFixtureInterface,
     Doctrine\Common\Persistence\ObjectManager;
 
-use Suivi\UserBundle\Entity\User;
+use Suivi\UserBundle\Entity\Professor;
 
 /**
  * Load users.
@@ -20,7 +20,7 @@ class LoadAdmin extends AbstractFixture implements OrderedFixtureInterface
      */
     public function load(ObjectManager $manager)
     {
-        $admin = new User();
+        $admin = new Professor();
         $admin
             ->setUsername('admin')
             ->setEmail('admin@admin.com')
