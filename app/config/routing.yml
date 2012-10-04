@@ -21,3 +21,8 @@ fos_user_change_password:
 SuiviMainBundle:
     resource: "@SuiviMainBundle/Controller/"
     type:     annotation
+
+SuiviAdminBundle:
+    resource: "@SuiviAdminBundle/Controller/"
+    type:     annotation
+    prefix:   /admin

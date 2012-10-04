@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="suivi_user")
+ * @ORM\Table(name="fos_user")
  *
  * @ORM\InheritanceType("SINGLE_TABLE")
  * @ORM\DiscriminatorColumn(
@@ -33,10 +33,79 @@ class User extends BaseUser
     protected $id;
 
     /**
+     * @ORM\Column(
+     *      type   = "string",
+     *      length = 255
+     * )
+     *
+     * @var string
+     */
+    protected $firstname;
+
+    /**
+     * @ORM\Column(
+     *      type   = "string",
+     *      length = 255
+     * )
+     *
+     * @var string
+     */
+    protected $lastname;
+
+
+    /**
      * {@inheritdoc}
      */
     public function __construct()
     {
         parent::__construct();
+    }
+
+    /**
+     * Gets firstname.
+     *
+     * @return string
+     */
+    public function getFirstname()
+    {
+        return $this->firstname;
+    }
+
+    /**
+     * Sets firstname.
+     *
+     * @param string $firstname
+     *
+     * @return \Suivi\UserBundle\Entity\User
+     */
+    public function setFirstname($firstname)
+    {
+        $this->firstname = $firstname;
+
+        return $this;
+    }
+
+    /**
+     * Gets lastname.
+     *
+     * @return string
+     */
+    public function getLastname()
+    {
+        return $this->lastname;
+    }
+
+    /**
+     * Sets lastname.
+     *
+     * @param string $lastname
+     *
+     * @return \Suivi\UserBundle\Entity\User
+     */
+    public function setLastname($lastname)
+    {
+        $this->lastname = $lastname;
+
+        return $this;
     }
 }

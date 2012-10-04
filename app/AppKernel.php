@@ -28,6 +28,7 @@ class AppKernel extends Kernel
 
             new Suivi\MainBundle\SuiviMainBundle(),
             new Suivi\UserBundle\SuiviUserBundle(),
+            new Suivi\AdminBundle\SuiviAdminBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

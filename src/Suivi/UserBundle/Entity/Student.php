@@ -4,7 +4,7 @@ namespace Suivi\UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
-use Suivi\MainBundle\Entity\TypeContrat;
+use Suivi\MainBundle\Entity\ContractType;
 
 /**
  * @ORM\Entity
@@ -14,12 +14,12 @@ use Suivi\MainBundle\Entity\TypeContrat;
 class Student extends User
 {
     /**
-     * @ORM\ManyToOne(targetEntity = "Suivi\MainBundle\Entity\TypeContrat")
+     * @ORM\ManyToOne(targetEntity = "Suivi\MainBundle\Entity\ContractType")
      * @ORM\JoinColumn(name = "typecontrat_id")
      *
-     * @var \Suivi\MainBundle\Entity\TypeContrat
+     * @var \Suivi\MainBundle\Entity\ContractType
      */
-    protected $typeContrat;
+    protected $contractType;
 
     /**
      * @ORM\ManyToOne(
@@ -45,21 +45,21 @@ class Student extends User
 
     /**
      *
-     * @return \Suivi\MainBundle\Entity\TypeContrat
+     * @return \Suivi\MainBundle\Entity\ContractType
      */
-    public function getTypeContrat()
+    public function getContractType()
     {
-        return $this->typeContrat;
+        return $this->contractType;
     }
 
     /**
-     * @param \Suivi\MainBundle\Entity\TypeContrat $typeContrat
+     * @param \Suivi\MainBundle\Entity\ContractType $typeContrat
      *
      * @return \Suivi\UserBundle\Entity\Student
      */
-    public function setTypeContrat(TypeContrat $typeContrat)
+    public function setContractType(ContractType $contractType)
     {
-        $this->typeContrat = $typeContrat;
+        $this->contractType = $contractType;
 
         return $this;
     }
@@ -81,7 +81,9 @@ class Student extends User
      */
     public function setProfessor(Professor $professor)
     {
-        $this->professor = $professor;
+        if (null === $this->professor) {
+            $this->professor = $professor;
+        }
 
         return $this;
     }
@@ -98,12 +100,14 @@ class Student extends User
     /**
      *
      * @param \Suivi\UserBundle\Entity\Tutor $tutor
-     * 
+     *
      * @return \Suivi\UserBundle\Entity\Student
      */
     public function setTutor(Tutor $tutor)
     {
-        $this->tutor = $tutor;
+        if (null === $this->professor) {
+            $this->tutor = $tutor;
+        }
 
         return $this;
     }

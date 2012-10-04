@@ -2,7 +2,8 @@
 
 namespace Suivi\UserBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping as ORM,
+    Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity
@@ -113,6 +114,7 @@ class Tutor extends User
     public function addStudent(Student $student)
     {
         $this->students[] = $student;
+        $student->setTutor($this);
 
         return $this;
     }

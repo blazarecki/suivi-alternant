@@ -22,7 +22,7 @@
         "widop/twig-extensions-bundle" : "dev-master",
         "stof/doctrine-extensions-bundle": "dev-master",
         "gedmo/doctrine-extensions" : "dev-master",
-        "friendsofsymfony/user-bundle": "*",
+        "friendsofsymfony/user-bundle": "*"
     },
     "scripts": {
         "post-install-cmd": [
@@ -39,6 +39,7 @@
         ]
     },
     "require-dev": {
+        "fzaninotto/faker": "dev-master",
         "behat/symfony2-extension": "dev-master",
         "behat/mink-extension": "dev-master",
         "behat/mink-browserkit-driver": "dev-master",

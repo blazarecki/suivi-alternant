@@ -50,6 +50,7 @@ class Professor extends User
     public function addStudent(Student $student)
     {
         $this->students[] = $student;
+        $student->setProfessor($this);
 
         return $this;
     }
