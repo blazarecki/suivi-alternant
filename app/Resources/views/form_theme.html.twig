@@ -1,0 +1,89 @@
+{% extends "form_div_layout.html.twig" %}
+
+{# Rows #}
+
+{% block form_row %}
+{% spaceless %}
+<div class="control-group{% if errors|length > 0 %} error{% endif %}">
+    {{ form_label(form, label|default(null)) }}
+    <div class="controls">
+        {{ form_errors(form) }}
+        {{ form_widget(form) }}
+    </div>
+</div>
+{% endspaceless %}
+{% endblock form_row %}
+
+{# Labels #}
+
+{% block form_label %}
+{% spaceless %}
+    {% set label_attr = label_attr|merge({'class': (label_attr.class|default('') ~ ' control-label')|trim}) %}
+    {% if not compound %}
+        {% set label_attr = label_attr|merge({'for': id}) %}
+    {% endif %}
+    {% if required %}
+        {% set label_attr = label_attr|merge({'class': (label_attr.class|default('') ~ ' required')|trim}) %}
+    {% endif %}
+    {% if label is empty %}
+        {% set label = name|humanize %}
+    {% endif %}
+    <label{% for attrname, attrvalue in label_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}>{{ label|trans({}, translation_domain) }}</label>
+{% endspaceless %}
+{% endblock form_label %}
+
+{# Errors #}
+
+{% block form_errors %}
+{% spaceless %}
+{% if errors|length > 0 %}
+    <p class="help-block">
+        {% for error in errors %}
+            {% if loop.index0 > 0 %}
+                <br>
+            {% endif %}
+            {{
+                error.messagePluralization is null
+                    ? error.messageTemplate|trans(error.messageParameters, 'validators')
+                    : error.messageTemplate|transchoice(error.messagePluralization, error.messageParameters, 'validators')
+            }}
+        {% endfor %}
+    </p>
+{% endif %}
+{% endspaceless %}
+{% endblock form_errors %}
+
+{# Widgets #}
+
+{% block choice_widget_expanded %}
+{% spaceless %}
+    {% set attr = attr|merge({'class': (attr.class|default('') ~ ' controls')|trim}) %}
+    <div {{ block('widget_container_attributes') }}>
+        {% for child in form %}
+            {{ form_widget(child, { 'expanded': expanded }) }}
+        {% endfor %}
+    </div>
+{% endspaceless %}
+{% endblock choice_widget_expanded %}
+
+{% block checkbox_widget %}
+{% spaceless %}
+    <label class="checkbox">
+        <input type="checkbox" {{ block('widget_attributes') }}{% if value is defined %} value="{{ value }}"{% endif %}{% if checked %} checked="checked"{% endif %} />
+        {% if expanded is defined and expanded %}
+            {{ label|trans({}, translation_domain) }}
+        {% endif %}
+</label>
+{% endspaceless %}
+{% endblock checkbox_widget %}
+
+{% block radio_widget %}
+{% spaceless %}
+<label class="radio">
+    <input type="radio" {{ block('widget_attributes') }}{% if value is defined %} value="{{ value }}"{% endif %}{% if checked %} checked="checked"{% endif %} />
+    {% if expanded is defined and expanded %}
+        {{ label|trans({}, translation_domain) }}
+    {% endif %}
+</label>
+{% endspaceless %}
+{% endblock radio_widget %}

@@ -1,0 +1,20 @@
+parameters:
+    database_driver:   pdo_mysql
+    database_host:     localhost
+    database_port:     ~
+    database_name:     suivi-alternant
+    database_user:     root
+    database_password: ~
+
+    mailer_transport:  smtp
+    mailer_host:       localhost
+    mailer_user:       ~
+    mailer_password:   ~
+
+    locale:            fr
+    secret:            ~
+
+    # LESS
+    less.node:       /usr/local/bin/node
+    less.node_paths: [/usr/local/lib/node_modules]
+    less.apply_to:   "\.less$"

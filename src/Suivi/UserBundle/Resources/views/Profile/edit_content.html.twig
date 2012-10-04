@@ -1,0 +1,10 @@
+<form action="{{ path('fos_user_profile_edit') }}" {{ form_enctype(form) }} method="POST" class="fos_user_profile_edit" novalidate="novalidate">
+    <legend>
+    {{ 'profile.edit.legend' | trans({}, 'FOSUserBundle') }}
+    <a href="{{ url('fos_user_profile_show') }}" class="btn pull-right">{{ 'cancel' | trans }}</a>
+    </legend>
+    {{ form_widget(form) }}
+    <div>
+        <input class="btn btn-primary" type="submit" value="{{ 'profile.edit.submit'|trans({}, 'FOSUserBundle') }}" />
+    </div>
+</form>

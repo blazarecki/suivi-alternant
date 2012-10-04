@@ -1,0 +1,33 @@
+# Bootstrap files
+app/bootstrap*
+
+# Symfony directories
+vendor/*
+*/logs/*
+*/cache/*
+web/uploads/*
+web/bundles/*
+
+# Configuration files
+app/config/parameters.yml
+behat.yml
+
+# Composer files
+composer.phar
+
+# PHPUnit files
+phpunit.xml
+
+# Assetic generated files
+web/resetting
+web/registration
+web/profile
+web/layout.js
+web/layout.css
+web/js
+web/css
+
+# Binary files
+bin/behat
+bin/doctrine
+bin/doctrine.php

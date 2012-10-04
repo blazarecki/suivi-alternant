@@ -1,0 +1,22 @@
+# Globale translations
+
+titleSuffix: ":: Suivi alternant"
+
+name: Suivi alternant
+
+footer: "&copy; Benjamin Lazarecki | Clément Duez"
+
+menu:
+    libelle: Menu
+    lien1:   lien
+    lien2:   lien
+    lien3:   lien
+    lien4:   lien
+
+
+submit:  Valider
+add:     Ajouter
+remove:  Suprimmer
+update:  Éditer
+confirm: Confirmer
+cancel:  Annuler

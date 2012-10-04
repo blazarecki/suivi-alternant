@@ -1,0 +1,16 @@
+{% extends '::layout.html.twig' %}
+
+{% block title %}{{ 'main.title' | trans }}{% endblock %}
+
+{% block content %}
+{{ knp_menu_render('main_top') }}
+
+    <div class="well">
+        <h1>{{ 'main.well.title' | trans }}</h1>
+        <p>{{ 'main.well.content' | trans }}</p>
+        <p>
+            <a href="{{ url('fos_user_security_login') }}" class="btn btn-primary btn-medium">{{ 'main.well.login' | trans }}</a>
+        </p>
+    </div>
+
+{% endblock %}

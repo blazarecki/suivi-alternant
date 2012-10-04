@@ -1,0 +1,8 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% block title %}{{ 'registration.title' | trans({}, 'FOSUserBundle') }}{% endblock %}
+{% block content %}
+{% block fos_user_content %}
+{% include "FOSUserBundle:Registration:register_content.html.twig" %}
+{% endblock %}
+{% endblock %}
