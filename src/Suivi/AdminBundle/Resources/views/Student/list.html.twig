@@ -3,6 +3,25 @@
 {% block title %}{{ 'admin.student.title' | trans }}{% endblock %}
 
 {% block content %}
-ok
+<table class="table table-striped">
+    <thead>
+        <th>@student</th>
+        <th>@professor</th>
+        <th>@tutor</th>
+        <th>@compagnie</th>
+        <th>@contract</th>
+    </thead>
+    <tbody>
+        {% for student in students %}
+            <tr>
+                <td>{{ student.fullname }}</td>
+                <td>{{ student.professor.fullname }}</td>
+                <td>{{ student.tutor.fullname }}</td>
+                <td>{{ student.tutor.compagnie }}</td>
+                <td>{{ student.contractType.code }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
 {% endblock %}
 

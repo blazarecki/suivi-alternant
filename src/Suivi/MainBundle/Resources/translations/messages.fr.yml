@@ -1,6 +1,2 @@
 main:
     title:   Accueil
-    well:
-        title: Bienvenu !.
-        content: Mauris quis nisl dolor, eu eleifend sapien. Nulla at mauris non leo rhoncus pellentesque id ut eros. Maecenas et tellus id urna ultricies interdum. Aliquam vitae velit ut nibh mattis fringilla. Morbi hendrerit lacus ac enim blandit sit amet elementum nisi condimentum. Proin sit amet orci nulla. Quisque dictum lacinia metus, nec malesuada nisl tempus et. Nam ac interdum magna. In dapibus diam et mauris condimentum lacinia. Aliquam bibendum convallis odio, et mattis lectus adipiscing vitae. Phasellus condimentum neque vitae quam ullamcorper ac congue felis laoreet.
-        login: Se connecter

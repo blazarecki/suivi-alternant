@@ -33,6 +33,10 @@ class LoadProfessor extends AbstractFixture implements OrderedFixtureInterface
                 ->setEnabled(true)
                 ->addRole('ROLE_USER');
 
+            if (0 === $i) {
+                $professor->addRole('ROLE_ADMIN');
+            }
+
             $manager->persist($professor);
 
             $this->setReference('professor_' . $i, $professor);

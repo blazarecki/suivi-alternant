@@ -53,12 +53,15 @@
                                 <a class="navbar-link" href="{{ path('fos_user_security_logout') }}">
                                     {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
                                 </a>
-                            {% else %}
-                                <a class="navbar-link" href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
                             {% endif %}
                         </p>
                         <ul class="nav">
-                            <li class="active"><a href="#">{{ 'home' | trans }}</a></li>
+                            {% block menu %}
+                            {% endblock %}
+
+                            {% if is_granted("ROLE_ADMIN") %}
+                                <li><a href="{{ url('admin_student_list') }}">@admin</a></li>
+                            {% endif %}
                         </ul>
                     </div>
                 </div>

@@ -105,7 +105,7 @@ class Student extends User
      */
     public function setTutor(Tutor $tutor)
     {
-        if (null === $this->professor) {
+        if (null === $this->tutor) {
             $this->tutor = $tutor;
         }
 
