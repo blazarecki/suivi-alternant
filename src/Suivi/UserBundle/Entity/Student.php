@@ -8,6 +8,7 @@ use Suivi\MainBundle\Entity\ContractType;
 
 /**
  * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Suivi\UserBundle\Repository\StudentRepository")
  *
  * @author Benjamin Lazarecki <benjamin.lazarecki@gmail.com>
  */
