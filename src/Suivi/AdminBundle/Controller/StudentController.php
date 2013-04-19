@@ -30,7 +30,7 @@ class StudentController extends Controller
      */
     public function listAction()
     {
-        $students = $this->getDoctrine()->getRepository('SuiviUserBundle:Student')->findAll();
+        $students = $this->getDoctrine()->getRepository('SuiviUserBundle:Student')->getList();
 
         return ['students' => $students];
     }
